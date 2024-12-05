@@ -1,0 +1,23 @@
+{
+  "name": "many-server-proxy",
+  "version": "1.0.0",
+  "description": "Reverse proxy with multiple backend servers",
+  "main": "proxy.js",
+  "scripts": {
+    "start": "node proxy.js",
+    "start:server1": "node servers/server1.js",
+    "start:server2": "node servers/server2.js",
+    "start:server3": "node servers/server3.js",
+    "start:all": "npm-run-all --parallel start:server1 start:server2 start:server3 start",
+    "ecosystem": "pm2 start ecosystem.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "express-http-proxy": "^2.1.1",
+    "mongoose": "^8.8.3",
+    "npm-run-all": "^4.1.5"
+  }
+}
